@@ -1,36 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
+using System.Net.Http;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net.Http;
-using DotNetEnv;
-using System.Text.Json;
-using System.Collections;
 using System.IO;
+using DotNetEnv;
 
 namespace GUI_API_Formss
 {
     public partial class Form1 : Form
     {
-        private const string QuotesApiUrl = "https://api.api-ninjas.com/v1/quotes";
+        // API Key and Base URL
         private readonly string ApiKey;
+        private const string QuotesApiUrl = "https://api.api-ninjas.com/v1/quotes";
 
         public Form1()
         {
             InitializeComponent();
 
-            // Load .env
+            // Load API Key from .env
             string envPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ".env");
-            Console.WriteLine($"Loading .env from: {envPath}");
             Env.Load(envPath);
             ApiKey = Env.GetString("API_KEY");
-            Console.WriteLine($"API Key: {ApiKey}");
 
+            // Validate API Key
             if (string.IsNullOrWhiteSpace(ApiKey))
             {
                 MessageBox.Show("API Key not found. Please check your .env file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -38,60 +33,28 @@ namespace GUI_API_Formss
             }
         }
 
-        private async void btnGetMessage_Click(object sender, EventArgs e)
-        {
-            using (HttpClient client = new HttpClient())
-            {
-                try
-                {
-                    string apiUrl = "http://localhost:5000/api/test/message";
-                    HttpResponseMessage response = await client.GetAsync(apiUrl);
-
-                    if (response.IsSuccessStatusCode)
-                    {
-                        string message = await response.Content.ReadAsStringAsync();
-                        txtOutput.Text = message;
-                    }
-                    else
-                    {
-                        txtOutput.Text = "Error: " + response.StatusCode;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    txtOutput.Text = "Exception: " + ex.Message;
-                }
-            }
-        }
-
+        // Fetch a random quote from the API
         private async void btnFetchQuote_Click(object sender, EventArgs e)
         {
-            string category = cmbCategory.SelectedItem?.ToString() ?? string.Empty;
-
-            if (string.IsNullOrWhiteSpace(category))
-            {
-                MessageBox.Show("Please select a category before fetching a quote.");
-                return;
-            }
-
             using (HttpClient client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
 
                 try
                 {
-                    string requestUrl = $"https://api.api-ninjas.com/v1/quotes?category={category}";
-                    HttpResponseMessage response = await client.GetAsync(requestUrl);
+                    // Send GET request to the Quotes API
+                    HttpResponseMessage response = await client.GetAsync(QuotesApiUrl);
                     response.EnsureSuccessStatusCode();
 
+                    // Deserialize the JSON response
                     string jsonResponse = await response.Content.ReadAsStringAsync();
                     var quotes = JsonSerializer.Deserialize<Quote[]>(jsonResponse);
 
                     if (quotes?.Length > 0)
                     {
+                        // Display the first quote in the response
                         var quote = quotes[0];
                         txtOutput.Text = $"\"{quote.Text}\"\r\n- {quote.Author}";
-
                     }
                     else
                     {
@@ -100,17 +63,29 @@ namespace GUI_API_Formss
                 }
                 catch (Exception ex)
                 {
+                    // Handle errors
                     txtOutput.Text = "Error fetching quote: " + ex.Message;
                 }
             }
         }
 
-        public class Quote
+        // Fetch a static message
+        private void btnGetMessage_Click(object sender, EventArgs e)
         {
-            public string? Text { get; set; }
-            public string? Author { get; set; }
-            public string? Category { get; set; }
+            txtOutput.Text = "Hello from your local application!";
         }
 
+        // Quote class to map the API response
+        public class Quote
+        {
+            [JsonPropertyName("quote")]
+            public string? Text { get; set; }
+
+            [JsonPropertyName("author")]
+            public string? Author { get; set; }
+
+            [JsonPropertyName("category")]
+            public string? Category { get; set; }
+        }
     }
 }

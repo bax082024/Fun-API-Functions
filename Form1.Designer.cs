@@ -30,7 +30,6 @@
         {
             btnGetMessage = new Button();
             lblMessage = new Label();
-            cmbCategory = new ComboBox();
             btnFetchQuote = new Button();
             txtOutput = new TextBox();
             SuspendLayout();
@@ -52,15 +51,6 @@
             lblMessage.Name = "lblMessage";
             lblMessage.Size = new Size(0, 15);
             lblMessage.TabIndex = 1;
-            // 
-            // cmbCategory
-            // 
-            cmbCategory.FormattingEnabled = true;
-            cmbCategory.Items.AddRange(new object[] { "age", "color", "pay" });
-            cmbCategory.Location = new Point(91, 224);
-            cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(121, 23);
-            cmbCategory.TabIndex = 2;
             // 
             // btnFetchQuote
             // 
@@ -89,7 +79,6 @@
             ClientSize = new Size(800, 450);
             Controls.Add(txtOutput);
             Controls.Add(btnFetchQuote);
-            Controls.Add(cmbCategory);
             Controls.Add(lblMessage);
             Controls.Add(btnGetMessage);
             Name = "Form1";
@@ -102,7 +91,6 @@
 
         private Button btnGetMessage;
         private Label lblMessage;
-        private ComboBox cmbCategory;
         private Button btnFetchQuote;
         private TextBox txtOutput;
     }
