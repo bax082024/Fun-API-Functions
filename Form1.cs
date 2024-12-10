@@ -24,6 +24,12 @@ namespace GUI_API_Formss
             // Load .env
             Env.Load();
             ApiKey = Env.GetString("API_KEY");
+
+            if (string.IsNullOrWhiteSpace(ApiKey))
+            {
+                MessageBox.Show("API Key not found. Please check your .env file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
+            }
         }
 
 
