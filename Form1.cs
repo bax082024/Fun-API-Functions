@@ -67,6 +67,13 @@ namespace GUI_API_Formss
                 MessageBox.Show("Please select a category before fetching a quote.");
                 return;
             }
+
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
+
+
+            }
         }
     }
 }
