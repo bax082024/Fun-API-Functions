@@ -5,6 +5,8 @@ entertaining API-based functionalities, such as jokes, trivia, quotes, and more.
 The application uses a visually appealing UI and connects to several, 
 APIs to fetch interesting content.
 
+---
+
 ## Features
 
 - Fetch random quotes, jokes and facts.
@@ -12,3 +14,5 @@ APIs to fetch interesting content.
 - Explore trivia and riddles.
 - Find random hobbies and lorem ipsum text.
 - And ofcourse dad jokes.
+
+---
