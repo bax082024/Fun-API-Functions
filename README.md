@@ -15,6 +15,8 @@ APIs to fetch interesting content.
 - Find random hobbies and lorem ipsum text.
 - And ofcourse dad jokes.
 
+![App Screenshot](Images/App.png)
+
 ---
 
 ## Setup and installation
