@@ -355,5 +355,36 @@ namespace GUI_API_Formss
             }
         }
 
+        private async void btnGetLoremIpsum_Click(object sender, EventArgs e)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
+
+                try
+                {
+                    // Send GET request to the Chuck Norris API
+                    HttpResponseMessage response = await client.GetAsync(LoremIpsumApiUrl);
+                    response.EnsureSuccessStatusCode();
+
+                    // Deserialize the JSON response
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    var loremIpsum = JsonSerializer.Deserialize<LoremIpsum>(jsonResponse);
+
+                    if (loremIpsum != null)
+                    {
+                        txtOutput.Text = loremIpsum.Text;
+                    }
+                    else
+                    {
+                        txtOutput.Text = "No Lorem Ipsum found.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    txtOutput.Text = "Error fetching Lorem Ipsum: " + ex.Message;
+                }
+            }
+        }
     }
 }

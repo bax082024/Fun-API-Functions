@@ -37,7 +37,7 @@
             btnGetTrivia = new Button();
             btnGetHobbies = new Button();
             button6 = new Button();
-            button7 = new Button();
+            btnGetLoremIpsum = new Button();
             btnGetRiddle = new Button();
             button9 = new Button();
             button10 = new Button();
@@ -133,14 +133,15 @@
             button6.Text = "Quote";
             button6.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnGetLoremIpsum
             // 
-            button7.Location = new Point(331, 272);
-            button7.Name = "button7";
-            button7.Size = new Size(75, 23);
-            button7.TabIndex = 11;
-            button7.Text = "Quote";
-            button7.UseVisualStyleBackColor = true;
+            btnGetLoremIpsum.Location = new Point(331, 272);
+            btnGetLoremIpsum.Name = "btnGetLoremIpsum";
+            btnGetLoremIpsum.Size = new Size(75, 23);
+            btnGetLoremIpsum.TabIndex = 11;
+            btnGetLoremIpsum.Text = "LoremIps";
+            btnGetLoremIpsum.UseVisualStyleBackColor = true;
+            btnGetLoremIpsum.Click += btnGetLoremIpsum_Click;
             // 
             // btnGetRiddle
             // 
@@ -183,12 +184,13 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ControlDark;
             ClientSize = new Size(800, 450);
             Controls.Add(button9);
             Controls.Add(button10);
             Controls.Add(button11);
             Controls.Add(button6);
-            Controls.Add(button7);
+            Controls.Add(btnGetLoremIpsum);
             Controls.Add(btnGetRiddle);
             Controls.Add(btnGetHobbies);
             Controls.Add(btnGetTrivia);
@@ -216,7 +218,7 @@
         private Button btnGetTrivia;
         private Button btnGetHobbies;
         private Button button6;
-        private Button button7;
+        private Button btnGetLoremIpsum;
         private Button btnGetRiddle;
         private Button button9;
         private Button button10;
