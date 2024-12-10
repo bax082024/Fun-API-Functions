@@ -21,6 +21,7 @@ namespace GUI_API_Formss
         private const string TriviaApiUrl = "https://api.api-ninjas.com/v1/trivia";
         private const string HobbiesApiUrl = "https://api.api-ninjas.com/v1/hobbies";
         private const string RiddleApiUrl = "https://api.api-ninjas.com/v1/riddles";
+        private const string LoremIpsumApiUrl = "https://api.api-ninjas.com/v1/loremipsum";
 
         public Form1()
         {
@@ -297,7 +298,7 @@ namespace GUI_API_Formss
 
                     // Deserialize the JSON response
                     string jsonResponse = await response.Content.ReadAsStringAsync();
-                    var hobby = JsonSerializer.Deserialize<Hobbies>(jsonResponse); // Deserialize as a single object
+                    var hobby = JsonSerializer.Deserialize<Hobbies>(jsonResponse);
 
                     if (hobby != null)
                     {
