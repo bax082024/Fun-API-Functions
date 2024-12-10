@@ -32,41 +32,40 @@ namespace GUI_API_Formss
             }
         }
 
-
-
         private async void btnGetMessage_Click(object sender, EventArgs e)
         {
             using (HttpClient client = new HttpClient())
             {
                 try
                 {
-                    // API URL
                     string apiUrl = "http://localhost:5000/api/test/message";
-
-                    // Send GET request
                     HttpResponseMessage response = await client.GetAsync(apiUrl);
 
-                    // Ensure success
                     if (response.IsSuccessStatusCode)
                     {
                         string message = await response.Content.ReadAsStringAsync();
-                        lblMessage.Text = message; // Display the message
+                        txtOutput.Text = message;
                     }
                     else
                     {
-                        lblMessage.Text = "Error: " + response.StatusCode;
+                        txtOutput.Text = "Error: " + response.StatusCode;
                     }
                 }
                 catch (Exception ex)
                 {
-                    lblMessage.Text = "Exception: " + ex.Message;
+                    txtOutput.Text = "Exception: " + ex.Message;
                 }
             }
         }
 
         private void btnFetchQuote_Click(object sender, EventArgs e)
         {
+            string category = cmbCategory.SelectedItem?.ToString() ?? string.Empty;
 
+            if (string.IsNullOrWhiteSpace (category))
+            {
+
+            }
         }
     }
 }
