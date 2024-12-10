@@ -27,4 +27,9 @@ APIs to fetch interesting content.
 **Steps to Run the Application**
 1. Clone the repository:
 	- **https://github.com/bax082024/API-GUI-Forms.git**
+2. Open the project in Visual Studio.
+3. Create a `.env` file in the project directory and add your API key:
+![API_KEY](images/API_KEY.png)
+
+
 
