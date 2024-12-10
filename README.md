@@ -29,7 +29,13 @@ APIs to fetch interesting content.
 	- **https://github.com/bax082024/API-GUI-Forms.git**
 2. Open the project in Visual Studio.
 3. Create a `.env` file in the project directory and add your API key:
-![API_KEY](images/API_KEY.png)
+- `API_KEY=your_api_key_here`
+4. Build and run the project.
+
+## How to use 
+1. Launch the Application.
+2. Click on any of the buttons to fetch data from the external API.
+3. The data received will be displayed in the text box. 
 
 
 
