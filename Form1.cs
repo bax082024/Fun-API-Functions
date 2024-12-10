@@ -415,7 +415,7 @@ namespace GUI_API_Formss
 
                     if (dadJokes != null && dadJokes.Length > 0)
                     {
-                        
+
                         txtOutput.Text = dadJokes[0].Text;
                     }
                     else
@@ -425,7 +425,7 @@ namespace GUI_API_Formss
                 }
                 catch (Exception ex)
                 {
-                    
+
                     txtOutput.Text = "Error fetching Dad joke: " + ex.Message;
                 }
             }
@@ -438,20 +438,47 @@ namespace GUI_API_Formss
             // Create a LinearGradientBrush
             System.Drawing.Drawing2D.LinearGradientBrush gradientBrush =
                 new System.Drawing.Drawing2D.LinearGradientBrush(
-                    this.ClientRectangle, 
-                    System.Drawing.Color.LightBlue, 
-                    System.Drawing.Color.LightGray, 
+                    this.ClientRectangle,
+                    System.Drawing.Color.LightBlue,
+                    System.Drawing.Color.LightGray,
                     System.Drawing.Drawing2D.LinearGradientMode.Vertical
                 );
 
             // Fill the background with the gradient
             e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
 
-            gradientBrush.Dispose(); 
+            gradientBrush.Dispose();
         }
 
+        private void btnFetchQuote_Enter(object sender, EventArgs e)
+        {
 
+        }
+
+        private void btnFetchQuote_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            if (button != null)
+            {
+                button.BackColor = System.Drawing.Color.CornflowerBlue; // Change color on hover
+            }
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            if (button != null)
+            {
+                button.BackColor = System.Drawing.Color.LightSteelBlue; // Revert to original color
+            }
+        }
 
 
     }
 }
+
