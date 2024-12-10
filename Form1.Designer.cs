@@ -38,14 +38,14 @@
             btnGetDadJoke = new Button();
             btnGetLoremIpsum = new Button();
             btnGetRiddle = new Button();
-            button9 = new Button();
-            button10 = new Button();
-            button11 = new Button();
+            label1 = new Label();
+            groupBox1 = new GroupBox();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // btnFetchQuote
             // 
-            btnFetchQuote.Location = new Point(250, 214);
+            btnFetchQuote.Location = new Point(0, 22);
             btnFetchQuote.Name = "btnFetchQuote";
             btnFetchQuote.Size = new Size(75, 23);
             btnFetchQuote.TabIndex = 3;
@@ -65,7 +65,7 @@
             // 
             // btnGetFact
             // 
-            btnGetFact.Location = new Point(412, 214);
+            btnGetFact.Location = new Point(162, 22);
             btnGetFact.Name = "btnGetFact";
             btnGetFact.Size = new Size(75, 23);
             btnGetFact.TabIndex = 5;
@@ -75,7 +75,7 @@
             // 
             // btnGetJoke
             // 
-            btnGetJoke.Location = new Point(331, 214);
+            btnGetJoke.Location = new Point(81, 22);
             btnGetJoke.Name = "btnGetJoke";
             btnGetJoke.Size = new Size(75, 23);
             btnGetJoke.TabIndex = 6;
@@ -85,7 +85,7 @@
             // 
             // btnGetChuckNorris
             // 
-            btnGetChuckNorris.Location = new Point(250, 243);
+            btnGetChuckNorris.Location = new Point(0, 51);
             btnGetChuckNorris.Name = "btnGetChuckNorris";
             btnGetChuckNorris.Size = new Size(75, 23);
             btnGetChuckNorris.TabIndex = 7;
@@ -95,7 +95,7 @@
             // 
             // btnGetTrivia
             // 
-            btnGetTrivia.Location = new Point(331, 243);
+            btnGetTrivia.Location = new Point(81, 51);
             btnGetTrivia.Name = "btnGetTrivia";
             btnGetTrivia.Size = new Size(75, 23);
             btnGetTrivia.TabIndex = 8;
@@ -105,7 +105,7 @@
             // 
             // btnGetHobbies
             // 
-            btnGetHobbies.Location = new Point(412, 243);
+            btnGetHobbies.Location = new Point(162, 51);
             btnGetHobbies.Name = "btnGetHobbies";
             btnGetHobbies.Size = new Size(75, 23);
             btnGetHobbies.TabIndex = 9;
@@ -115,7 +115,7 @@
             // 
             // btnGetDadJoke
             // 
-            btnGetDadJoke.Location = new Point(412, 272);
+            btnGetDadJoke.Location = new Point(162, 80);
             btnGetDadJoke.Name = "btnGetDadJoke";
             btnGetDadJoke.Size = new Size(75, 23);
             btnGetDadJoke.TabIndex = 12;
@@ -125,7 +125,7 @@
             // 
             // btnGetLoremIpsum
             // 
-            btnGetLoremIpsum.Location = new Point(331, 272);
+            btnGetLoremIpsum.Location = new Point(81, 80);
             btnGetLoremIpsum.Name = "btnGetLoremIpsum";
             btnGetLoremIpsum.Size = new Size(75, 23);
             btnGetLoremIpsum.TabIndex = 11;
@@ -135,7 +135,7 @@
             // 
             // btnGetRiddle
             // 
-            btnGetRiddle.Location = new Point(250, 272);
+            btnGetRiddle.Location = new Point(0, 80);
             btnGetRiddle.Name = "btnGetRiddle";
             btnGetRiddle.Size = new Size(75, 23);
             btnGetRiddle.TabIndex = 10;
@@ -143,32 +143,33 @@
             btnGetRiddle.UseVisualStyleBackColor = true;
             btnGetRiddle.Click += btnGetRiddle_Click;
             // 
-            // button9
+            // label1
             // 
-            button9.Location = new Point(412, 301);
-            button9.Name = "button9";
-            button9.Size = new Size(75, 23);
-            button9.TabIndex = 15;
-            button9.Text = "Quote";
-            button9.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(282, 25);
+            label1.Name = "label1";
+            label1.Size = new Size(205, 32);
+            label1.TabIndex = 13;
+            label1.Text = "Fun API Functions";
             // 
-            // button10
+            // groupBox1
             // 
-            button10.Location = new Point(331, 301);
-            button10.Name = "button10";
-            button10.Size = new Size(75, 23);
-            button10.TabIndex = 14;
-            button10.Text = "Quote";
-            button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            button11.Location = new Point(250, 301);
-            button11.Name = "button11";
-            button11.Size = new Size(75, 23);
-            button11.TabIndex = 13;
-            button11.Text = "Quote";
-            button11.UseVisualStyleBackColor = true;
+            groupBox1.Controls.Add(btnFetchQuote);
+            groupBox1.Controls.Add(btnGetFact);
+            groupBox1.Controls.Add(btnGetDadJoke);
+            groupBox1.Controls.Add(btnGetJoke);
+            groupBox1.Controls.Add(btnGetLoremIpsum);
+            groupBox1.Controls.Add(btnGetChuckNorris);
+            groupBox1.Controls.Add(btnGetRiddle);
+            groupBox1.Controls.Add(btnGetTrivia);
+            groupBox1.Controls.Add(btnGetHobbies);
+            groupBox1.Location = new Point(250, 219);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(237, 118);
+            groupBox1.TabIndex = 14;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "groupBox1";
             // 
             // Form1
             // 
@@ -176,22 +177,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDark;
             ClientSize = new Size(800, 450);
-            Controls.Add(button9);
-            Controls.Add(button10);
-            Controls.Add(button11);
-            Controls.Add(btnGetDadJoke);
-            Controls.Add(btnGetLoremIpsum);
-            Controls.Add(btnGetRiddle);
-            Controls.Add(btnGetHobbies);
-            Controls.Add(btnGetTrivia);
-            Controls.Add(btnGetChuckNorris);
-            Controls.Add(btnGetJoke);
-            Controls.Add(btnGetFact);
+            Controls.Add(groupBox1);
+            Controls.Add(label1);
             Controls.Add(txtOutput);
-            Controls.Add(btnFetchQuote);
             Name = "Form1";
             Text = "Form1";
             Click += btnGetHobbies_Click;
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -207,8 +199,10 @@
         private Button btnGetDadJoke;
         private Button btnGetLoremIpsum;
         private Button btnGetRiddle;
-        private Button button9;
-        private Button button10;
-        private Button button11;
+        private Label label1;
+        private GroupBox groupBox1;
+
+
+
     }
 }

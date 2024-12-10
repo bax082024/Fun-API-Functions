@@ -431,6 +431,26 @@ namespace GUI_API_Formss
             }
         }
 
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+
+            // Create a LinearGradientBrush
+            System.Drawing.Drawing2D.LinearGradientBrush gradientBrush =
+                new System.Drawing.Drawing2D.LinearGradientBrush(
+                    this.ClientRectangle, 
+                    System.Drawing.Color.LightBlue, 
+                    System.Drawing.Color.LightGray, 
+                    System.Drawing.Drawing2D.LinearGradientMode.Vertical
+                );
+
+            // Fill the background with the gradient
+            e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
+
+            gradientBrush.Dispose(); 
+        }
+
+
 
 
     }
