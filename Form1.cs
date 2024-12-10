@@ -435,12 +435,11 @@ namespace GUI_API_Formss
         {
             base.OnPaint(e);
 
-            // Create a smoother gradient
             using (System.Drawing.Drawing2D.LinearGradientBrush gradientBrush =
                 new System.Drawing.Drawing2D.LinearGradientBrush(
                     this.ClientRectangle,
-                    System.Drawing.Color.LightSkyBlue, // Start color
-                    System.Drawing.Color.White,       // End color
+                    Color.LightSkyBlue, // Start color
+                    Color.White,        // End color
                     System.Drawing.Drawing2D.LinearGradientMode.Vertical))
             {
                 e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
