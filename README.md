@@ -65,5 +65,10 @@ APIs to fetch interesting content.
 
 - **Dad Jokes API:** Delivers dad jokes.
 
+---
 
+## Contact
+
+For quesions or feedback please contact:
+- **bax082024@gmail.com**
 
