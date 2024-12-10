@@ -22,4 +22,9 @@ APIs to fetch interesting content.
 **Prerequisites**
 1. Visual Studio with `.NET desktop development` workload.
 2. Make an API Ninjas account to generate an API key.
-	- https://api-ninjas.com/
+	- **https://api-ninjas.com/**
+
+**Steps to Run the Application**
+1. Clone the repository:
+	- **https://github.com/bax082024/API-GUI-Forms.git**
+
