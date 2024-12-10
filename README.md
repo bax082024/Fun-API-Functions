@@ -42,8 +42,10 @@ APIs to fetch interesting content.
 ---
 
 ## API`s Used
-The application uses the following API`s:
-Quotes API: Fetches random inspirational quotes.
+
+**The application uses the following API`s from https://api-ninjas.com/:**
+
+- **Quotes API:** Fetches random inspirational quotes.
 
 - **Jokes API:** Provides general jokes.
 
