@@ -20,6 +20,7 @@ namespace GUI_API_Formss
         private const string ChuckNorrisApiUrl = "https://api.api-ninjas.com/v1/chucknorris";
         private const string TriviaApiUrl = "https://api.api-ninjas.com/v1/trivia";
         private const string HobbiesApiUrl = "https://api.api-ninjas.com/v1/hobbies";
+        private const string RiddleApiUrl = "https://api.api-ninjas.com/v1/riddles";
 
         public Form1()
         {
@@ -122,6 +123,8 @@ namespace GUI_API_Formss
             [JsonPropertyName("answer")]
             public string? Answer { get; set; }
         }
+
+
 
         public class Hobbies
         {
