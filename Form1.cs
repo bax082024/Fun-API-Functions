@@ -16,6 +16,7 @@ namespace GUI_API_Formss
         private readonly string ApiKey;
         private const string QuotesApiUrl = "https://api.api-ninjas.com/v1/quotes";
         private const string JokesApiUrl = "https://api.api-ninjas.com/v1/jokes";
+        private const string FactsApiUrl = "https://api.api-ninjas.com/v1/facts";
 
 
         public Form1()
@@ -96,12 +97,77 @@ namespace GUI_API_Formss
             public string? Text { get; set; }
         }
 
-        private void btnGetJoke_Click(object sender, EventArgs e)
+        public class Fact
+        {
+            [JsonPropertyName("fact")]
+            public string? Text { get; set; }
+        }
+
+        private async void btnGetJoke_Click(object sender, EventArgs e)
         {
             using (HttpClient client = new HttpClient())
             {
                 client.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
+
+                try
+                {
+                    // Send GET request to the Jokes API
+                    HttpResponseMessage response = await client.GetAsync(JokesApiUrl);
+                    response.EnsureSuccessStatusCode();
+
+                    // Deserialize the JSON response
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    var jokes = JsonSerializer.Deserialize<Joke[]>(jsonResponse);
+
+                    if (jokes?.Length > 0)
+                    {
+                        var joke = jokes[0];
+                        txtOutput.Text = joke.Text;
+                    }
+                    else
+                    {
+                        txtOutput.Text = "No jokes found.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    txtOutput.Text = "Error fetching joke: " + ex.Message;
+                }
             }
         }
+
+        private async void btnGetFact_Click(object sender, EventArgs e)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
+
+                try
+                {
+                    // Send GET request to the Facts API
+                    HttpResponseMessage response = await client.GetAsync(FactsApiUrl);
+                    response.EnsureSuccessStatusCode();
+
+                    // Deserialize the JSON response
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    var facts = JsonSerializer.Deserialize<Fact[]>(jsonResponse);
+
+                    if (facts?.Length > 0)
+                    {
+                        var fact = facts[0];
+                        txtOutput.Text = fact.Text;
+                    }
+                    else
+                    {
+                        txtOutput.Text = "No facts found.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    txtOutput.Text = "Error fetching fact: " + ex.Message;
+                }
+            }
+        }
+
     }
 }

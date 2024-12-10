@@ -31,7 +31,7 @@
             btnGetMessage = new Button();
             btnFetchQuote = new Button();
             txtOutput = new TextBox();
-            button1 = new Button();
+            btnGetFact = new Button();
             btnGetJoke = new Button();
             button3 = new Button();
             button4 = new Button();
@@ -74,14 +74,15 @@
             txtOutput.Size = new Size(290, 91);
             txtOutput.TabIndex = 4;
             // 
-            // button1
+            // btnGetFact
             // 
-            button1.Location = new Point(412, 214);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 5;
-            button1.Text = "Quote";
-            button1.UseVisualStyleBackColor = true;
+            btnGetFact.Location = new Point(412, 214);
+            btnGetFact.Name = "btnGetFact";
+            btnGetFact.Size = new Size(75, 23);
+            btnGetFact.TabIndex = 5;
+            btnGetFact.Text = "Fact";
+            btnGetFact.UseVisualStyleBackColor = true;
+            btnGetFact.Click += btnGetFact_Click;
             // 
             // btnGetJoke
             // 
@@ -189,7 +190,7 @@
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(btnGetJoke);
-            Controls.Add(button1);
+            Controls.Add(btnGetFact);
             Controls.Add(txtOutput);
             Controls.Add(btnFetchQuote);
             Controls.Add(btnGetMessage);
@@ -204,7 +205,7 @@
         private Button btnGetMessage;
         private Button btnFetchQuote;
         private TextBox txtOutput;
-        private Button button1;
+        private Button btnGetFact;
         private Button btnGetJoke;
         private Button button3;
         private Button button4;
