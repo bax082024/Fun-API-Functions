@@ -30,11 +30,14 @@
         {
             btnGetMessage = new Button();
             lblMessage = new Label();
+            cmbCategory = new ComboBox();
+            btnFetchQuote = new Button();
+            txtOutput = new TextBox();
             SuspendLayout();
             // 
             // btnGetMessage
             // 
-            btnGetMessage.Location = new Point(310, 169);
+            btnGetMessage.Location = new Point(322, 278);
             btnGetMessage.Name = "btnGetMessage";
             btnGetMessage.Size = new Size(84, 23);
             btnGetMessage.TabIndex = 0;
@@ -45,17 +48,47 @@
             // lblMessage
             // 
             lblMessage.AutoSize = true;
-            lblMessage.Location = new Point(319, 102);
+            lblMessage.Location = new Point(333, 260);
             lblMessage.Name = "lblMessage";
             lblMessage.Size = new Size(0, 15);
             lblMessage.TabIndex = 1;
-            
+            // 
+            // cmbCategory
+            // 
+            cmbCategory.FormattingEnabled = true;
+            cmbCategory.Items.AddRange(new object[] { "age", "color", "pay" });
+            cmbCategory.Location = new Point(91, 224);
+            cmbCategory.Name = "cmbCategory";
+            cmbCategory.Size = new Size(121, 23);
+            cmbCategory.TabIndex = 2;
+            // 
+            // btnFetchQuote
+            // 
+            btnFetchQuote.Location = new Point(331, 214);
+            btnFetchQuote.Name = "btnFetchQuote";
+            btnFetchQuote.Size = new Size(75, 23);
+            btnFetchQuote.TabIndex = 3;
+            btnFetchQuote.Text = "Quote";
+            btnFetchQuote.UseVisualStyleBackColor = true;
+            // 
+            // txtOutput
+            // 
+            txtOutput.Location = new Point(233, 101);
+            txtOutput.Multiline = true;
+            txtOutput.Name = "txtOutput";
+            txtOutput.ReadOnly = true;
+            txtOutput.ScrollBars = ScrollBars.Vertical;
+            txtOutput.Size = new Size(290, 91);
+            txtOutput.TabIndex = 4;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtOutput);
+            Controls.Add(btnFetchQuote);
+            Controls.Add(cmbCategory);
             Controls.Add(lblMessage);
             Controls.Add(btnGetMessage);
             Name = "Form1";
@@ -68,5 +101,8 @@
 
         private Button btnGetMessage;
         private Label lblMessage;
+        private ComboBox cmbCategory;
+        private Button btnFetchQuote;
+        private TextBox txtOutput;
     }
 }
