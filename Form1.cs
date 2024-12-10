@@ -462,19 +462,16 @@ namespace GUI_API_Formss
         {
             var button = sender as Button;
             if (button != null)
-            {
-                button.BackColor = System.Drawing.Color.CornflowerBlue; // Change color on hover
-            }
+                button.BackColor = Color.LightBlue;
         }
 
         private void Button_MouseLeave(object sender, EventArgs e)
         {
             var button = sender as Button;
             if (button != null)
-            {
-                button.BackColor = System.Drawing.Color.LightSteelBlue; // Revert to original color
-            }
+                button.BackColor = SystemColors.Control; 
         }
+
 
 
     }
