@@ -64,7 +64,8 @@ namespace GUI_API_Formss
 
             if (string.IsNullOrWhiteSpace (category))
             {
-
+                MessageBox.Show("Please select a category before fetching a quote.");
+                return;
             }
         }
     }
