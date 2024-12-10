@@ -260,8 +260,8 @@ namespace GUI_API_Formss
 
                 try
                 {
-                    string triviaUrl = "https://api.api-ninjas.com/v1/trivia";
-                    HttpResponseMessage response = await client.GetAsync(triviaUrl);
+                    
+                    HttpResponseMessage response = await client.GetAsync(TriviaApiUrl);
                     response.EnsureSuccessStatusCode();
 
                     string jsonResponse = await response.Content.ReadAsStringAsync();
