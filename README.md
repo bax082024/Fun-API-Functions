@@ -31,7 +31,7 @@ APIs to fetch interesting content.
 	- **https://github.com/bax082024/API-GUI-Forms.git**
 2. Open the project in Visual Studio.
 3. Create a `.env` file in the project directory and add your API key:
-- `API_KEY=your_api_key_here` ![API Key Example:](Images/APIKEY.png)
+![API Key Example:](Images/APIKEY.png)
 4. Build and run the project.
 
 ---
