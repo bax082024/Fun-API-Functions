@@ -70,6 +70,7 @@
             btnFetchQuote.TabIndex = 3;
             btnFetchQuote.Text = "Quote";
             btnFetchQuote.UseVisualStyleBackColor = true;
+            btnFetchQuote.Click += btnFetchQuote_Click;
             // 
             // txtOutput
             // 

@@ -8,15 +8,25 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
+using DotNetEnv;
 
 namespace GUI_API_Formss
 {
     public partial class Form1 : Form
     {
+        private const string QuotesApiUrl = "https://api.api-ninjas.com/v1/quotes";
+        private readonly string ApiKey;
+
         public Form1()
         {
             InitializeComponent();
+
+            // Load .env
+            Env.Load();
+            ApiKey = Env.GetString("API_KEY");
         }
+
+
 
         private async void btnGetMessage_Click(object sender, EventArgs e)
         {
@@ -46,6 +56,11 @@ namespace GUI_API_Formss
                     lblMessage.Text = "Exception: " + ex.Message;
                 }
             }
+        }
+
+        private void btnFetchQuote_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
