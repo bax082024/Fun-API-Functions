@@ -38,7 +38,7 @@
             btnGetHobbies = new Button();
             button6 = new Button();
             button7 = new Button();
-            button8 = new Button();
+            btnGetRiddle = new Button();
             button9 = new Button();
             button10 = new Button();
             button11 = new Button();
@@ -142,14 +142,15 @@
             button7.Text = "Quote";
             button7.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnGetRiddle
             // 
-            button8.Location = new Point(250, 272);
-            button8.Name = "button8";
-            button8.Size = new Size(75, 23);
-            button8.TabIndex = 10;
-            button8.Text = "Quote";
-            button8.UseVisualStyleBackColor = true;
+            btnGetRiddle.Location = new Point(250, 272);
+            btnGetRiddle.Name = "btnGetRiddle";
+            btnGetRiddle.Size = new Size(75, 23);
+            btnGetRiddle.TabIndex = 10;
+            btnGetRiddle.Text = "Riddle";
+            btnGetRiddle.UseVisualStyleBackColor = true;
+            btnGetRiddle.Click += btnGetRiddle_Click;
             // 
             // button9
             // 
@@ -188,7 +189,7 @@
             Controls.Add(button11);
             Controls.Add(button6);
             Controls.Add(button7);
-            Controls.Add(button8);
+            Controls.Add(btnGetRiddle);
             Controls.Add(btnGetHobbies);
             Controls.Add(btnGetTrivia);
             Controls.Add(btnGetChuckNorris);
@@ -216,7 +217,7 @@
         private Button btnGetHobbies;
         private Button button6;
         private Button button7;
-        private Button button8;
+        private Button btnGetRiddle;
         private Button button9;
         private Button button10;
         private Button button11;
