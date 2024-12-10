@@ -32,10 +32,34 @@ APIs to fetch interesting content.
 - `API_KEY=your_api_key_here`
 4. Build and run the project.
 
+---
+
 ## How to use 
 1. Launch the Application.
 2. Click on any of the buttons to fetch data from the external API.
 3. The data received will be displayed in the text box. 
+
+---
+
+## API`s Used
+The application uses the following API`s:
+Quotes API: Fetches random inspirational quotes.
+
+- **Jokes API:** Provides general jokes.
+
+- **Facts API:** Supplies interesting facts.
+
+- **Chuck Norris API:** Shares Chuck Norris-themed jokes.
+
+- **Trivia API:** Displays trivia questions and answers.
+
+- **Hobbies API:** Recommends hobbies and links to related Wikipedia pages.
+
+- **Riddle API:** Offers fun riddles with answers.
+
+- **Lorem Ipsum API:** Generates lorem ipsum text.
+
+- **Dad Jokes API:** Delivers dad jokes.
 
 
 
