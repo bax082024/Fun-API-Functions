@@ -1,0 +1,7 @@
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI_API_Formss.Form1.resources
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.csproj.GenerateResource.cache
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.GeneratedMSBuildEditorConfig.editorconfig
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.AssemblyInfoInputs.cache
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.AssemblyInfo.cs
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.csproj.CoreCompileInputs.cache
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.sourcelink.json
