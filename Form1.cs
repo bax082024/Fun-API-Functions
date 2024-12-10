@@ -15,6 +15,8 @@ namespace GUI_API_Formss
         // API Key and Base URL
         private readonly string ApiKey;
         private const string QuotesApiUrl = "https://api.api-ninjas.com/v1/quotes";
+        private const string JokesApiUrl = "https://api.api-ninjas.com/v1/jokes";
+
 
         public Form1()
         {
@@ -86,6 +88,20 @@ namespace GUI_API_Formss
 
             [JsonPropertyName("category")]
             public string? Category { get; set; }
+        }
+
+        public class Joke
+        {
+            [JsonPropertyName("joke")]
+            public string? Text { get; set; }
+        }
+
+        private void btnGetJoke_Click(object sender, EventArgs e)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
+            }
         }
     }
 }
