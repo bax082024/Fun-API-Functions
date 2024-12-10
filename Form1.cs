@@ -149,6 +149,12 @@ namespace GUI_API_Formss
             public string? Category { get; set; }
         }
 
+        public class LoremIpsum
+        {
+            [JsonPropertyName("text")]
+            public string? Text { get; set; }
+        }
+
 
 
         private async void btnGetJoke_Click(object sender, EventArgs e)
