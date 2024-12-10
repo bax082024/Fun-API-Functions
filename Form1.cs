@@ -11,6 +11,7 @@ using System.Net.Http;
 using DotNetEnv;
 using System.Text.Json;
 using System.Collections;
+using System.IO;
 
 namespace GUI_API_Formss
 {
@@ -24,8 +25,11 @@ namespace GUI_API_Formss
             InitializeComponent();
 
             // Load .env
-            Env.Load();
+            string envPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ".env");
+            Console.WriteLine($"Loading .env from: {envPath}");
+            Env.Load(envPath);
             ApiKey = Env.GetString("API_KEY");
+            Console.WriteLine($"API Key: {ApiKey}");
 
             if (string.IsNullOrWhiteSpace(ApiKey))
             {

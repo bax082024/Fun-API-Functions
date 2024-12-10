@@ -3,6 +3,12 @@ C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\bin\Debug\net8.0-windows\GUI-API
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\bin\Debug\net8.0-windows\GUI-API-Formss.runtimeconfig.json
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\bin\Debug\net8.0-windows\GUI-API-Formss.dll
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\bin\Debug\net8.0-windows\GUI-API-Formss.pdb
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\bin\Debug\net8.0-windows\DotNetEnv.dll
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\bin\Debug\net8.0-windows\Sprache.dll
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.csproj.AssemblyReference.cache
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI_API_Formss.Form1.resources
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.csproj.GenerateResource.cache
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.GeneratedMSBuildEditorConfig.editorconfig
@@ -10,8 +16,10 @@ C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.AssemblyInfo.cs
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.csproj.CoreCompileInputs.cache
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.sourcelink.json
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-.907F81F3.Up2Date
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.dll
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\refint\GUI-API-Formss.dll
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.pdb
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\GUI-API-Formss.genruntimeconfig.cache
 C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\obj\Debug\net8.0-windows\ref\GUI-API-Formss.dll
+C:\HjemmeKode\C-Sharp\MyProjects\GUI-API-Formss\bin\Debug\net8.0-windows\.env
