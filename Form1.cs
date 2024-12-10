@@ -24,6 +24,7 @@ namespace GUI_API_Formss
         private const string LoremIpsumApiUrl = "https://api.api-ninjas.com/v1/loremipsum";
         private const string DadJokesApiUrl = "https://api.api-ninjas.com/v1/dadjokes";
 
+
         public Form1()
         {
             InitializeComponent();
@@ -153,6 +154,12 @@ namespace GUI_API_Formss
         public class LoremIpsum
         {
             [JsonPropertyName("text")]
+            public string? Text { get; set; }
+        }
+
+        public class DadJoke
+        {
+            [JsonPropertyName("joke")]
             public string? Text { get; set; }
         }
 
@@ -387,5 +394,44 @@ namespace GUI_API_Formss
                 }
             }
         }
+
+        private async void btnGetDadJoke_Click(object sender, EventArgs e)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
+
+                try
+                {
+                    // Send GET request to the Dad Jokes API
+                    HttpResponseMessage response = await client.GetAsync(DadJokesApiUrl);
+                    response.EnsureSuccessStatusCode();
+
+                    // Read the JSON response
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+
+                    // Deserialize the JSON response as an array
+                    var dadJokes = JsonSerializer.Deserialize<DadJoke[]>(jsonResponse);
+
+                    if (dadJokes != null && dadJokes.Length > 0)
+                    {
+                        
+                        txtOutput.Text = dadJokes[0].Text;
+                    }
+                    else
+                    {
+                        txtOutput.Text = "No Dad joke found.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    
+                    txtOutput.Text = "Error fetching Dad joke: " + ex.Message;
+                }
+            }
+        }
+
+
+
     }
 }

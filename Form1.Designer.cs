@@ -35,7 +35,7 @@
             btnGetChuckNorris = new Button();
             btnGetTrivia = new Button();
             btnGetHobbies = new Button();
-            button6 = new Button();
+            btnGetDadJoke = new Button();
             btnGetLoremIpsum = new Button();
             btnGetRiddle = new Button();
             button9 = new Button();
@@ -113,14 +113,15 @@
             btnGetHobbies.UseVisualStyleBackColor = true;
             btnGetHobbies.Click += btnGetHobbies_Click;
             // 
-            // button6
+            // btnGetDadJoke
             // 
-            button6.Location = new Point(412, 272);
-            button6.Name = "button6";
-            button6.Size = new Size(75, 23);
-            button6.TabIndex = 12;
-            button6.Text = "Quote";
-            button6.UseVisualStyleBackColor = true;
+            btnGetDadJoke.Location = new Point(412, 272);
+            btnGetDadJoke.Name = "btnGetDadJoke";
+            btnGetDadJoke.Size = new Size(75, 23);
+            btnGetDadJoke.TabIndex = 12;
+            btnGetDadJoke.Text = "Dad Joke";
+            btnGetDadJoke.UseVisualStyleBackColor = true;
+            btnGetDadJoke.Click += btnGetDadJoke_Click;
             // 
             // btnGetLoremIpsum
             // 
@@ -178,7 +179,7 @@
             Controls.Add(button9);
             Controls.Add(button10);
             Controls.Add(button11);
-            Controls.Add(button6);
+            Controls.Add(btnGetDadJoke);
             Controls.Add(btnGetLoremIpsum);
             Controls.Add(btnGetRiddle);
             Controls.Add(btnGetHobbies);
@@ -203,7 +204,7 @@
         private Button btnGetChuckNorris;
         private Button btnGetTrivia;
         private Button btnGetHobbies;
-        private Button button6;
+        private Button btnGetDadJoke;
         private Button btnGetLoremIpsum;
         private Button btnGetRiddle;
         private Button button9;
