@@ -22,6 +22,7 @@ namespace GUI_API_Formss
         private const string HobbiesApiUrl = "https://api.api-ninjas.com/v1/hobbies";
         private const string RiddleApiUrl = "https://api.api-ninjas.com/v1/riddles";
         private const string LoremIpsumApiUrl = "https://api.api-ninjas.com/v1/loremipsum";
+        private const string DadJokesApiUrl = "https://api.api-ninjas.com/v1/dadjokes";
 
         public Form1()
         {

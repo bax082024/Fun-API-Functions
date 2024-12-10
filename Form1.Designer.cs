@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnGetMessage = new Button();
             btnFetchQuote = new Button();
             txtOutput = new TextBox();
             btnGetFact = new Button();
@@ -43,16 +42,6 @@
             button10 = new Button();
             button11 = new Button();
             SuspendLayout();
-            // 
-            // btnGetMessage
-            // 
-            btnGetMessage.Location = new Point(322, 334);
-            btnGetMessage.Name = "btnGetMessage";
-            btnGetMessage.Size = new Size(84, 23);
-            btnGetMessage.TabIndex = 0;
-            btnGetMessage.Text = "Get Message";
-            btnGetMessage.UseVisualStyleBackColor = true;
-            btnGetMessage.Click += btnGetMessage_Click;
             // 
             // btnFetchQuote
             // 
@@ -199,7 +188,6 @@
             Controls.Add(btnGetFact);
             Controls.Add(txtOutput);
             Controls.Add(btnFetchQuote);
-            Controls.Add(btnGetMessage);
             Name = "Form1";
             Text = "Form1";
             Click += btnGetHobbies_Click;
@@ -208,8 +196,6 @@
         }
 
         #endregion
-
-        private Button btnGetMessage;
         private Button btnFetchQuote;
         private TextBox txtOutput;
         private Button btnGetFact;
