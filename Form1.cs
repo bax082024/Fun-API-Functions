@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Http;
 using DotNetEnv;
+using System.Text.Json;
+using System.Collections;
 
 namespace GUI_API_Formss
 {
@@ -77,6 +79,15 @@ namespace GUI_API_Formss
                     string requestUrl = $"https://api.api-ninjas.com/v1/quotes?category={category}";
                     HttpResponseMessage response = await client.GetAsync(requestUrl);
                     response.EnsureSuccessStatusCode();
+
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    var quotes = JsonSerializer.Deserialize<Quote[]>(jsonResponse);
+
+                    if (quotes?.Lenght > 0)
+                    {
+                        var quote = quotes[0];
+                        txtOutput.Text = $"\"{quote.Quote}\"\r\n- {quote.Author}";
+                    }
                 }
 
             }
