@@ -88,6 +88,14 @@ namespace GUI_API_Formss
                         var quote = quotes[0];
                         txtOutput.Text = $"\"{quote.Quote}\"\r\n- {quote.Author}";
                     }
+                    else
+                    {
+                        txtOutput.Text = "No quotes found.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    txtOutput.Text = "Error fetching quote: " + ex.Message;
                 }
 
             }
