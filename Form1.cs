@@ -58,7 +58,7 @@ namespace GUI_API_Formss
             }
         }
 
-        private void btnFetchQuote_Click(object sender, EventArgs e)
+        private async void btnFetchQuote_Click(object sender, EventArgs e)
         {
             string category = cmbCategory.SelectedItem?.ToString() ?? string.Empty;
 
@@ -72,6 +72,12 @@ namespace GUI_API_Formss
             {
                 client.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
 
+                try
+                {
+                    string requestUrl = $"https://api.api-ninjas.com/v1/quotes?category={category}";
+                    HttpResponseMessage response = await client.GetAsync(requestUrl);
+                    response.EnsureSuccessStatusCode();
+                }
 
             }
         }
