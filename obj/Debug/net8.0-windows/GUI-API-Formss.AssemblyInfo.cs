@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GUI-API-Formss")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+135aba475d394fb83daae3c2a4aba1a609d68767")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d9fcd8b9abe8642a3018e50c70a043f6cf16be6b")]
 [assembly: System.Reflection.AssemblyProductAttribute("GUI-API-Formss")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GUI-API-Formss")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
