@@ -12,7 +12,6 @@ namespace GUI_API_Formss
 {
     public partial class Form1 : Form
     {
-        // API Key and Base URL
         private readonly string ApiKey;
         private const string QuotesApiUrl = "https://api.api-ninjas.com/v1/quotes";
         private const string JokesApiUrl = "https://api.api-ninjas.com/v1/jokes";
@@ -29,20 +28,19 @@ namespace GUI_API_Formss
         {
             InitializeComponent();
 
-            // Load API Key from .env
             string envPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ".env");
             Env.Load(envPath);
             ApiKey = Env.GetString("API_KEY");
 
-            // Validate API Key
             if (string.IsNullOrWhiteSpace(ApiKey))
             {
                 MessageBox.Show("API Key not found. Please check your .env file.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Application.Exit();
+
             }
+
         }
 
-        // Fetch a random quote from the API
         private async void btnFetchQuote_Click(object sender, EventArgs e)
         {
             using (HttpClient client = new HttpClient())
@@ -51,40 +49,37 @@ namespace GUI_API_Formss
 
                 try
                 {
-                    // Send GET request to the Quotes API
                     HttpResponseMessage response = await client.GetAsync(QuotesApiUrl);
                     response.EnsureSuccessStatusCode();
 
-                    // Deserialize the JSON response
+
+
                     string jsonResponse = await response.Content.ReadAsStringAsync();
                     var quotes = JsonSerializer.Deserialize<Quote[]>(jsonResponse);
 
                     if (quotes?.Length > 0)
                     {
-                        // Display the first quote in the response
                         var quote = quotes[0];
                         txtOutput.Text = $"\"{quote.Text}\"\r\n- {quote.Author}";
                     }
                     else
                     {
-                        txtOutput.Text = "No quotes found.";
+                        txtOutput.Text = "No quotes found. ";
                     }
                 }
                 catch (Exception ex)
                 {
-                    // Handle errors
                     txtOutput.Text = "Error fetching quote: " + ex.Message;
+
                 }
             }
         }
 
-        // Fetch a static message
         private void btnGetMessage_Click(object sender, EventArgs e)
         {
             txtOutput.Text = "Hello from your local application!";
         }
 
-        // Quote class to map the API response
         public class Quote
         {
             [JsonPropertyName("quote")]
@@ -173,11 +168,9 @@ namespace GUI_API_Formss
 
                 try
                 {
-                    // Send GET request to the Jokes API
                     HttpResponseMessage response = await client.GetAsync(JokesApiUrl);
                     response.EnsureSuccessStatusCode();
 
-                    // Deserialize the JSON response
                     string jsonResponse = await response.Content.ReadAsStringAsync();
                     var jokes = JsonSerializer.Deserialize<Joke[]>(jsonResponse);
 
@@ -206,11 +199,9 @@ namespace GUI_API_Formss
 
                 try
                 {
-                    // Send GET request to the Facts API
                     HttpResponseMessage response = await client.GetAsync(FactsApiUrl);
                     response.EnsureSuccessStatusCode();
 
-                    // Deserialize the JSON response
                     string jsonResponse = await response.Content.ReadAsStringAsync();
                     var facts = JsonSerializer.Deserialize<Fact[]>(jsonResponse);
 
@@ -239,11 +230,9 @@ namespace GUI_API_Formss
 
                 try
                 {
-                    // Send GET request to the Chuck Norris API
                     HttpResponseMessage response = await client.GetAsync(ChuckNorrisApiUrl);
                     response.EnsureSuccessStatusCode();
 
-                    // Deserialize the JSON response
                     string jsonResponse = await response.Content.ReadAsStringAsync();
                     var chuckNorrisJoke = JsonSerializer.Deserialize<ChuckNorris>(jsonResponse);
 
@@ -271,12 +260,10 @@ namespace GUI_API_Formss
 
                 try
                 {
-                    // Send GET request to the Trivia API
                     string triviaUrl = "https://api.api-ninjas.com/v1/trivia";
                     HttpResponseMessage response = await client.GetAsync(triviaUrl);
                     response.EnsureSuccessStatusCode();
 
-                    // Deserialize the JSON response
                     string jsonResponse = await response.Content.ReadAsStringAsync();
                     var triviaItems = JsonSerializer.Deserialize<Trivia[]>(jsonResponse);
 
@@ -306,11 +293,9 @@ namespace GUI_API_Formss
 
                 try
                 {
-                    // Send GET request to the Hobbies API
                     HttpResponseMessage response = await client.GetAsync(HobbiesApiUrl);
                     response.EnsureSuccessStatusCode();
 
-                    // Deserialize the JSON response
                     string jsonResponse = await response.Content.ReadAsStringAsync();
                     var hobby = JsonSerializer.Deserialize<Hobbies>(jsonResponse);
 
@@ -338,11 +323,9 @@ namespace GUI_API_Formss
 
                 try
                 {
-                    // Send GET request to the Riddles API
                     HttpResponseMessage response = await client.GetAsync(RiddleApiUrl);
                     response.EnsureSuccessStatusCode();
 
-                    // Deserialize the JSON response
                     string jsonResponse = await response.Content.ReadAsStringAsync();
                     var riddles = JsonSerializer.Deserialize<Riddle[]>(jsonResponse);
 
@@ -371,11 +354,9 @@ namespace GUI_API_Formss
 
                 try
                 {
-                    // Send GET request to the Chuck Norris API
                     HttpResponseMessage response = await client.GetAsync(LoremIpsumApiUrl);
                     response.EnsureSuccessStatusCode();
 
-                    // Deserialize the JSON response
                     string jsonResponse = await response.Content.ReadAsStringAsync();
                     var loremIpsum = JsonSerializer.Deserialize<LoremIpsum>(jsonResponse);
 
@@ -403,14 +384,11 @@ namespace GUI_API_Formss
 
                 try
                 {
-                    // Send GET request to the Dad Jokes API
                     HttpResponseMessage response = await client.GetAsync(DadJokesApiUrl);
                     response.EnsureSuccessStatusCode();
 
-                    // Read the JSON response
                     string jsonResponse = await response.Content.ReadAsStringAsync();
-
-                    // Deserialize the JSON response as an array
+                   
                     var dadJokes = JsonSerializer.Deserialize<DadJoke[]>(jsonResponse);
 
                     if (dadJokes != null && dadJokes.Length > 0)
@@ -438,8 +416,8 @@ namespace GUI_API_Formss
             using (System.Drawing.Drawing2D.LinearGradientBrush gradientBrush =
                 new System.Drawing.Drawing2D.LinearGradientBrush(
                     this.ClientRectangle,
-                    Color.LightSkyBlue, // Start color
-                    Color.White,        // End color
+                    Color.LightSkyBlue, 
+                    Color.White,        
                     System.Drawing.Drawing2D.LinearGradientMode.Vertical))
             {
                 e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
