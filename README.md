@@ -16,3 +16,10 @@ APIs to fetch interesting content.
 - And ofcourse dad jokes.
 
 ---
+
+## Setup and installation
+
+**Prerequisites**
+1. Visual Studio with `.NET desktop development` workload.
+2. Make an API Ninjas account to generate an API key.
+	- https://api-ninjas.com/
