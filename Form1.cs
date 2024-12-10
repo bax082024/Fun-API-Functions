@@ -64,7 +64,7 @@ namespace GUI_API_Formss
         {
             string category = cmbCategory.SelectedItem?.ToString() ?? string.Empty;
 
-            if (string.IsNullOrWhiteSpace (category))
+            if (string.IsNullOrWhiteSpace(category))
             {
                 MessageBox.Show("Please select a category before fetching a quote.");
                 return;
@@ -83,10 +83,11 @@ namespace GUI_API_Formss
                     string jsonResponse = await response.Content.ReadAsStringAsync();
                     var quotes = JsonSerializer.Deserialize<Quote[]>(jsonResponse);
 
-                    if (quotes?.Lenght > 0)
+                    if (quotes?.Length > 0)
                     {
                         var quote = quotes[0];
-                        txtOutput.Text = $"\"{quote.Quote}\"\r\n- {quote.Author}";
+                        txtOutput.Text = $"\"{quote.Text}\"\r\n- {quote.Author}";
+
                     }
                     else
                     {
@@ -97,8 +98,15 @@ namespace GUI_API_Formss
                 {
                     txtOutput.Text = "Error fetching quote: " + ex.Message;
                 }
-
             }
         }
+
+        public class Quote
+        {
+            public string? Text { get; set; }
+            public string? Author { get; set; }
+            public string? Category { get; set; }
+        }
+
     }
 }
