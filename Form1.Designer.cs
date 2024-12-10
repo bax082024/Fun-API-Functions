@@ -34,8 +34,8 @@
             btnGetFact = new Button();
             btnGetJoke = new Button();
             btnGetChuckNorris = new Button();
-            button4 = new Button();
-            button5 = new Button();
+            btnGetTrivia = new Button();
+            btnGetHobbies = new Button();
             button6 = new Button();
             button7 = new Button();
             button8 = new Button();
@@ -104,23 +104,25 @@
             btnGetChuckNorris.UseVisualStyleBackColor = true;
             btnGetChuckNorris.Click += btnGetChuckNorris_Click;
             // 
-            // button4
+            // btnGetTrivia
             // 
-            button4.Location = new Point(331, 243);
-            button4.Name = "button4";
-            button4.Size = new Size(75, 23);
-            button4.TabIndex = 8;
-            button4.Text = "Quote";
-            button4.UseVisualStyleBackColor = true;
+            btnGetTrivia.Location = new Point(331, 243);
+            btnGetTrivia.Name = "btnGetTrivia";
+            btnGetTrivia.Size = new Size(75, 23);
+            btnGetTrivia.TabIndex = 8;
+            btnGetTrivia.Text = "Trivia";
+            btnGetTrivia.UseVisualStyleBackColor = true;
+            btnGetTrivia.Click += btnGetTrivia_Click;
             // 
-            // button5
+            // btnGetHobbies
             // 
-            button5.Location = new Point(412, 243);
-            button5.Name = "button5";
-            button5.Size = new Size(75, 23);
-            button5.TabIndex = 9;
-            button5.Text = "Quote";
-            button5.UseVisualStyleBackColor = true;
+            btnGetHobbies.Location = new Point(412, 243);
+            btnGetHobbies.Name = "btnGetHobbies";
+            btnGetHobbies.Size = new Size(75, 23);
+            btnGetHobbies.TabIndex = 9;
+            btnGetHobbies.Text = "Hobbies";
+            btnGetHobbies.UseVisualStyleBackColor = true;
+            btnGetHobbies.Click += btnGetHobbies_Click;
             // 
             // button6
             // 
@@ -187,8 +189,8 @@
             Controls.Add(button6);
             Controls.Add(button7);
             Controls.Add(button8);
-            Controls.Add(button5);
-            Controls.Add(button4);
+            Controls.Add(btnGetHobbies);
+            Controls.Add(btnGetTrivia);
             Controls.Add(btnGetChuckNorris);
             Controls.Add(btnGetJoke);
             Controls.Add(btnGetFact);
@@ -197,7 +199,7 @@
             Controls.Add(btnGetMessage);
             Name = "Form1";
             Text = "Form1";
-            Click += btnGetChuckNorris_Click;
+            Click += btnGetHobbies_Click;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -210,8 +212,8 @@
         private Button btnGetFact;
         private Button btnGetJoke;
         private Button btnGetChuckNorris;
-        private Button button4;
-        private Button button5;
+        private Button btnGetTrivia;
+        private Button btnGetHobbies;
         private Button button6;
         private Button button7;
         private Button button8;

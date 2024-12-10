@@ -19,6 +19,7 @@ namespace GUI_API_Formss
         private const string FactsApiUrl = "https://api.api-ninjas.com/v1/facts";
         private const string ChuckNorrisApiUrl = "https://api.api-ninjas.com/v1/chucknorris";
         private const string TriviaApiUrl = "https://api.api-ninjas.com/v1/trivia";
+        private const string HobbiesApiUrl = "https://api.api-ninjas.com/v1/hobbies";
 
         public Form1()
         {
@@ -109,6 +110,31 @@ namespace GUI_API_Formss
             [JsonPropertyName("joke")]
             public string? Text { get; set; }
         }
+
+        public class Trivia
+        {
+            [JsonPropertyName("category")]
+            public string? Category { get; set; }
+
+            [JsonPropertyName("question")]
+            public string? Question { get; set; }
+
+            [JsonPropertyName("answer")]
+            public string? Answer { get; set; }
+        }
+
+        public class Hobbies
+        {
+            [JsonPropertyName("hobby")]
+            public string? Hobby { get; set; }
+
+            [JsonPropertyName("link")]
+            public string? Link { get; set; }
+
+            [JsonPropertyName("category")]
+            public string? Category { get; set; }
+        }
+
 
 
         private async void btnGetJoke_Click(object sender, EventArgs e)
@@ -208,6 +234,74 @@ namespace GUI_API_Formss
                 }
             }
         }
+
+        private async void btnGetTrivia_Click(object sender, EventArgs e)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
+
+                try
+                {
+                    // Send GET request to the Trivia API
+                    string triviaUrl = "https://api.api-ninjas.com/v1/trivia";
+                    HttpResponseMessage response = await client.GetAsync(triviaUrl);
+                    response.EnsureSuccessStatusCode();
+
+                    // Deserialize the JSON response
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    var triviaItems = JsonSerializer.Deserialize<Trivia[]>(jsonResponse);
+
+                    if (triviaItems?.Length > 0)
+                    {
+                        var trivia = triviaItems[0];
+                        txtOutput.Text = $"Category: {trivia.Category}\n\nQuestion: {trivia.Question}\n\nAnswer: {trivia.Answer}";
+                    }
+                    else
+                    {
+                        txtOutput.Text = "No trivia found.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    txtOutput.Text = "Error fetching trivia: " + ex.Message;
+                }
+            }
+        }
+
+
+        private async void btnGetHobbies_Click(object sender, EventArgs e)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
+
+                try
+                {
+                    // Send GET request to the Hobbies API
+                    HttpResponseMessage response = await client.GetAsync(HobbiesApiUrl);
+                    response.EnsureSuccessStatusCode();
+
+                    // Deserialize the JSON response
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    var hobby = JsonSerializer.Deserialize<Hobbies>(jsonResponse); // Deserialize as a single object
+
+                    if (hobby != null)
+                    {
+                        txtOutput.Text = $"Hobby: {hobby.Hobby}\nCategory: {hobby.Category}\nLink: {hobby.Link}";
+                    }
+                    else
+                    {
+                        txtOutput.Text = "No hobbies found.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    txtOutput.Text = "Error fetching hobbies: " + ex.Message;
+                }
+            }
+        }
+
 
     }
 }
