@@ -103,6 +103,13 @@ namespace GUI_API_Formss
             public string? Text { get; set; }
         }
 
+        public class ChuckNorris
+        {
+            [JsonPropertyName("joke")]
+            public string? Text { get; set; }
+        }
+
+
         private async void btnGetJoke_Click(object sender, EventArgs e)
         {
             using (HttpClient client = new HttpClient())
@@ -165,6 +172,38 @@ namespace GUI_API_Formss
                 catch (Exception ex)
                 {
                     txtOutput.Text = "Error fetching fact: " + ex.Message;
+                }
+            }
+        }
+
+        private async void btnGetChuckNorris_Click(object sender, EventArgs e)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.DefaultRequestHeaders.Add("X-Api-Key", ApiKey);
+
+                try
+                {
+                    // Send GET request to the Chuck Norris API
+                    HttpResponseMessage response = await client.GetAsync(ChuckNorrisApiUrl);
+                    response.EnsureSuccessStatusCode();
+
+                    // Deserialize the JSON response
+                    string jsonResponse = await response.Content.ReadAsStringAsync();
+                    var chuckNorrisJoke = JsonSerializer.Deserialize<ChuckNorris>(jsonResponse);
+
+                    if (chuckNorrisJoke != null)
+                    {
+                        txtOutput.Text = chuckNorrisJoke.Text;
+                    }
+                    else
+                    {
+                        txtOutput.Text = "No Chuck Norris joke found.";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    txtOutput.Text = "Error fetching Chuck Norris joke: " + ex.Message;
                 }
             }
         }

@@ -33,7 +33,7 @@
             txtOutput = new TextBox();
             btnGetFact = new Button();
             btnGetJoke = new Button();
-            button3 = new Button();
+            btnGetChuckNorris = new Button();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
@@ -94,14 +94,15 @@
             btnGetJoke.UseVisualStyleBackColor = true;
             btnGetJoke.Click += btnGetJoke_Click;
             // 
-            // button3
+            // btnGetChuckNorris
             // 
-            button3.Location = new Point(250, 243);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 7;
-            button3.Text = "Quote";
-            button3.UseVisualStyleBackColor = true;
+            btnGetChuckNorris.Location = new Point(250, 243);
+            btnGetChuckNorris.Name = "btnGetChuckNorris";
+            btnGetChuckNorris.Size = new Size(75, 23);
+            btnGetChuckNorris.TabIndex = 7;
+            btnGetChuckNorris.Text = "Chuck N";
+            btnGetChuckNorris.UseVisualStyleBackColor = true;
+            btnGetChuckNorris.Click += btnGetChuckNorris_Click;
             // 
             // button4
             // 
@@ -188,7 +189,7 @@
             Controls.Add(button8);
             Controls.Add(button5);
             Controls.Add(button4);
-            Controls.Add(button3);
+            Controls.Add(btnGetChuckNorris);
             Controls.Add(btnGetJoke);
             Controls.Add(btnGetFact);
             Controls.Add(txtOutput);
@@ -196,6 +197,7 @@
             Controls.Add(btnGetMessage);
             Name = "Form1";
             Text = "Form1";
+            Click += btnGetChuckNorris_Click;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -207,7 +209,7 @@
         private TextBox txtOutput;
         private Button btnGetFact;
         private Button btnGetJoke;
-        private Button button3;
+        private Button btnGetChuckNorris;
         private Button button4;
         private Button button5;
         private Button button6;
